@@ -1,10 +1,25 @@
 import React from "react"
-import { StyleSheet, Text, View } from "react-native"
+import { StyleSheet, Text, View, FlatList } from "react-native"
+
+import { CART } from "../data/cart"
+import CartItem from "../components/CartItem"
 
 const CartScreen = () => {
+    const total= 120
+
+    const renderCartItem =({item}) => (
+        <CartItem item={item} onDelete={() => console.log("borrar elemento")}/>
+    )
+
+
+
     return( 
         <View>
-            <Text> CartScreen </Text>        
+            <FlatList
+                data={CART}
+                keyExtractor={item => item.id}
+                renderItem={renderCartItem}
+            />       
         </View>
     )
 }
