@@ -15,28 +15,19 @@ const CategoriesScreen = ({ navigation }) => {
     }
 
 
-
     const renderCategoriesItem = ({ item }) =>(
         <View style={ styles.categoriesContainer}>
             <CategoriesItem item={item} onSelected={handleSeletedCategory} />
         </View>
     )
-
-
-
-
+    
     return(
         <View style={styles.container}>
             <FlatList 
                 data={CATEGORIES}
                 renderItem={renderCategoriesItem}
                 keyExtractor={item => item.id}
-            
-            
-            
-            />
-           
-            
+            />            
         </View>
     )
 }

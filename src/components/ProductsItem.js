@@ -1,21 +1,30 @@
- import { Image, StyleSheet, Text, View }  from "react-native"
+ import { Image, StyleSheet, Text, TouchableOpacity, View,}  from "react-native"
  import React from "react";
  
- const ProductsItem = () => {
-    return(
-        <View style={styles.itemContainer}>
-                <View style={styles.imageContainer}>
-                  
-                    <Image/>
+ const ProductsItem = ({ item, onSelected}) => {
+    return (
+        <TouchableOpacity 
+        style={styles.itemContainer} 
+        onPress={() => onSelected(item)}
+        >
+            
+            
+            <View style={styles.imageContainer}>      
+                    <Image
+                        style={styles.image}
+                        source={{
+                            uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/A_Black_Star.png/883px-A_Black_Star.png",
+                        }}
+                    />
                 </View>
 
                 <View style={styles.textContainer}>
-                    <Text>Nombre</Text>
-                    <Text>Description</Text>
-                    <Text>Precio</Text>
+                    <Text>{item.name}</Text>
+                    <Text>{item.description}</Text>
+                    <Text>${item.price}</Text>
                 </View>
-        </View>
-    )
+        </TouchableOpacity>
+    ) 
  }
 
  export default ProductsItem
@@ -24,6 +33,7 @@ const styles = StyleSheet.create({
     itemContainer: {
         flex: 1,
         borderRadius: 10,
+        padding: 10,
         shadowColor: "black",
         shadowOpacity: 0.5,
         shadowOffset: {width: 0,height: 2},
@@ -31,12 +41,12 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     imageContainer: {
-        height: "60%",
+        height: "50%",
 
     },
 
     textContainer: {
-        height:"40%",
+        height:"20%",
     },
     image:{
         height:"100%",

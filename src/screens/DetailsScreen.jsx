@@ -1,14 +1,17 @@
 import { Button, StyleSheet, Text, View } from "react-native"
-import React from "react"
+import React, { useEffect} from "react"
 
 
 // popToTop para ir a la stack primera
-const DetailsScreen = ({ navigation }) => {
+const DetailsScreen = ({ navigation, route  }) => {
+
+    useEffect(() => {
+        console.log(route.params)
+    }, [])
+
     return (
         <View style={styles.container}>
-            <Text> Pantalla Detalles</Text>
-
-            
+            <Text> {route.params.name}</Text>
             <Button title="Go to Inicio" onPress={() => navigation.popToTop()} />
 
         </View>

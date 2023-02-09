@@ -1,20 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
-import ShopNavigator from './src/navigation/ShopNavigator';
 
+import ShopNavigator from './src/navigation/ShopNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './src/navigation/BottomTabNavigator';
 
 
 export default function App() {
 
-  const [fontsLoaded] = useFonts({
-    Merriweather: require("./src/screens/assets/fonts/Merriweather-Black.ttf")
-  })
+ 
 
-  if (!fontsLoaded) {
-    return null
-  }
+  return( 
+      <NavigationContainer>
+    
+          <BottomTabNavigator />
 
-  return <ShopNavigator/>
+      </NavigationContainer>
+  )
 }
 
