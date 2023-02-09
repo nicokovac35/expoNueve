@@ -7,6 +7,14 @@ import CartItem from "../components/CartItem"
 const CartScreen = () => {
     const total= 120
 
+    const handleConfirmCart =() => {
+        console.log("Confirmar Carrito")
+    }
+
+    const handleDeleteItem = () =>{
+        console.log("borrar elemento")
+    } 
+
     const renderCartItem =({item}) => (
         <CartItem item={item} onDelete={() => console.log("borrar elemento")}/>
     )

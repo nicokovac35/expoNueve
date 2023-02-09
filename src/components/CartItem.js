@@ -8,11 +8,11 @@ const CartItem = ({item, onDelete }) => {
     return (
         <View style={styles.item}>
            <View>
-                    <Text style={styles.header}> Nombre del Producto</Text>
+                    <Text style={styles.header}>{item.name}</Text>
            </View>
            <View style={styles.detail}>
-                    <Text> Cantidad</Text>
-                    <Text> Precio</Text>
+                    <Text>{item.quantity}</Text>
+                    <Text>{item.price}</Text>
            </View>
            <TouchableOpacity onPress={() => console.log("eliminar del carrito")}>
                 <Ionicons  name="trash" size={24} color="red" />
