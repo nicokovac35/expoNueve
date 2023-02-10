@@ -1,7 +1,7 @@
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import CartScreen from "../screens/CartScreen"
+import OrdersScreen from "../screens/OrdersScreen";
 
 const Stack = createNativeStackNavigator ()
 
@@ -21,7 +21,7 @@ export default OrdersNavigator = () => {
                         
                 <Stack.Screen        
                  name="Orders"
-                 component={CartScreen}
+                 component={OrdersScreen}
                  options={{
                       title:"Ordenes",              
                  }}
