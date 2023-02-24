@@ -3,9 +3,15 @@ import {Button, StyleSheet, Text, View, FlatList } from "react-native";
 import CategoriesItem  from "../components/CategoriesItem";
 import { CATEGORIES } from "../data/categories";
 
+import { useSelector } from "react-redux";
+
+
 
 
 const CategoriesScreen = ({ navigation }) => {
+
+    // useSelector desde redux ahora categorias es desde store y no directamente desde data
+    const categories = useSelector((state) => state.categories.categories)
 
     const handleSeletedCategory = item => {
         navigation.navigate("Products", {
