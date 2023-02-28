@@ -1,9 +1,12 @@
 import { Button, StyleSheet, Text, View } from "react-native"
 import React, { useEffect} from "react"
+import { useSelector } from "react-redux"
 
 
 // popToTop para ir a la stack primera
 const DetailsScreen = ({ navigation, route  }) => {
+    const bread = useSelector (state => state.products.selected)
+
 
     useEffect(() => {
         console.log(route.params)
