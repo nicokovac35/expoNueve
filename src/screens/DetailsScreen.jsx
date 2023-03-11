@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 
 // popToTop para ir a la stack primera
 const DetailsScreen = ({ navigation, route  }) => {
-    const bread = useSelector (state => state.products.selected)
+    const shoes = useSelector (state => state.products.selected)
 
 
     useEffect(() => {
@@ -14,9 +14,10 @@ const DetailsScreen = ({ navigation, route  }) => {
 
     return (
         <View style={styles.container}>
-            <Text> {route.params.name}</Text>
-            <Button title="Go to Inicio" onPress={() => navigation.popToTop()} />
-
+            <Text>{shoes.name}</Text>
+            <Text>{shoes.description}</Text>
+            <Text>{shoes.price}</Text>
+            <Button title="Add to cArt!" onPress={() => console.log("agregado al carrito")} />  
         </View>
     )
 }

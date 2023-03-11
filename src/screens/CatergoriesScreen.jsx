@@ -10,17 +10,17 @@ import { selectedCategory } from "../store/actions/category.action";
 const CategoriesScreen = ({ navigation }) => {
 
     // useSelector desde redux ahora categorias es desde store y no directamente desde data
-    const categories = useSelector((state) => state.categories.categories)
+    const categories = useSelector(state => state.categories.categories)
     const dispatch = useDispatch()
 
     const handleSeletedCategory = item => {
         dispatch(selectedCategory(item.id))
         navigation.navigate("Products", {
-            //categoryId :item.id,
+            //  categoryId :item.id,
             title: item.title,
         })
     }
-
+  
 
     const renderCategoriesItem = ({ item }) =>(
         <View style={ styles.categoriesContainer}>

@@ -9,6 +9,15 @@ export const PRODUCTS = [
         description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
         weight:"dato",
         price:65000,
+        
+    },
+    {
+        id:"11",
+        category:"1",
+        name:"Chuck 70 en Bota de Lona 22",
+        description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
+        weight:"dato",
+        price:32000,
     },
     {
         id:"2",
@@ -57,6 +66,7 @@ export const PRODUCTS = [
         description:"Destacan los colores y realzan este calzado de alta velocidad.",
         weight:"dato",
         price:140000,
+        
     },
     {
         id:"8",

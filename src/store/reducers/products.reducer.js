@@ -7,6 +7,8 @@ const initialState = {
     selected: null,
 }
 
+//seleccion de producto y retorno de producto por Id
+
 const ProductReducer = ( state = initialState, action) => {
         switch (action.type) {
             case SELECTED_PRODUCT:
@@ -14,7 +16,7 @@ const ProductReducer = ( state = initialState, action) => {
                 return {
                     ...state,
                     selected: state.products.find(
-                        product => product.id === action.productId)
+                        product => product.id === action.productId),
                 }
 
             case FILTERED_PRODUCT:

@@ -13,7 +13,7 @@
                     <Image
                         style={styles.image}
                         source={{
-                            uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/A_Black_Star.png/883px-A_Black_Star.png",
+                            uri:"https://converse.com.mx/media/catalog/product/c/o/converse-all-star-bb-prototype-cx-poliester-caballero-media-bota-blanco-a02507c-2.jpg",
                         }}
                     />
                 </View>

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react"
 import { FlatList, StyleSheet,} from "react-native";
 import ProductsItem from "../components/ProductsItem";
-
-
 import { useSelector, useDispatch } from "react-redux";
+
 import { 
     selectedProduct,
-    filteredProduct,
+    filteredProduct, 
 } from "../store/actions/products.action"
+
 
 
 
@@ -24,7 +24,7 @@ const ProductsScreen = ({ navigation, route }) => {
             dispatch(filteredProduct(category.id))
         }, [])
 
-        const handleSelectProduct = item =>{
+    const handleSelectedProduct = item => {
         dispatch(selectedProduct(item.id))
         navigation.navigate("Details",{
             name:   item.name,
@@ -34,14 +34,14 @@ const ProductsScreen = ({ navigation, route }) => {
 
 
     const renderProductItem = ({item}) => ( 
-        <ProductsItem item={item} onSelected={handleSelectProduct} />
+        <ProductsItem item={item} onSelected={handleSelectedProduct} />
 
     )
     
     return (
           
             <FlatList 
-            data={ categoryProducts }
+            data={categoryProducts}
             renderItem ={renderProductItem} 
             keyExtractor= {item => item.id}
             numColumns={2}
