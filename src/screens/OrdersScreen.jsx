@@ -1,17 +1,26 @@
+import React, {useEffect} from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
-import React from "react";
 import OrderItem  from "../components/OrderItem";
-import { ORDERS } from "../data/orders"
+
+
+import { useSelector, useDispatch } from "react-redux";
+import { getOrders } from "../store/actions/order.action"
+
 
 const OrdersScreen = () => {
+    const dispatch = useDispatch()
+    const orders = useSelector(state => state.orders.list)
 
+    useEffect(() => {
+        dispatch(getOrders())
+    }, [])
 
     const renderOrderItem = ({ item }) => (
         <OrderItem item={item} onDelete={() => console.log("on deleteee")} />
     )
     return (
         <FlatList
-            data={ORDERS}
+            data={orders}
             keyExtractor={item => item.id}
             renderItem={renderOrderItem}
         />
