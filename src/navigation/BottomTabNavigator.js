@@ -54,7 +54,7 @@ export default BottomTabNavigator = () => {
                     tabBarIcon: () => (
                         <View style={styles.icon}>
                             <Ionicons name="list" size={20} color="black" />
-                            <Text> Orders </Text>
+                            <Text> Pedidos </Text>
                         </View>
                     ),
                  }}

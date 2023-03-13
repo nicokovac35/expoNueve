@@ -16,11 +16,11 @@ const CategoriesScreen = ({ navigation }) => {
     const handleSeletedCategory = item => {
         dispatch(selectedCategory(item.id))
         navigation.navigate("Products", {
-            //  categoryId :item.id,
+            //categoryId :item.id,
             title: item.title,
         })
     }
-  
+
 
     const renderCategoriesItem = ({ item }) =>(
         <View style={ styles.categoriesContainer}>
