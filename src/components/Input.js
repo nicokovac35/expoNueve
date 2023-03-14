@@ -24,6 +24,8 @@ const inputReducer = (state, action) => {
 
 }
 
+// LOG  {"error": {"code": 400, "errors": [[Object]], "message": "MISSING_CUSTOM_TOKEN"}}
+
 const Input = () => {
     return (
         <View>
