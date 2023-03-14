@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import { 
 StyleSheet,  
 Text,  
@@ -5,19 +7,51 @@ View,
 KeyboardAvoidingView, 
 TouchableOpacity,
 TextInput,
+Button,
 } from "react-native";
 
-import React from "react";
+import { useDispatch } from "react-redux";
+import { signup } from "../store/actions/auth.action";
 
 const AuthScreen = () => {
+
+    const dispatch = useDispatch()
+    const [email, setEmail] = useState ("")
+    const [ password, setPassword] = useState ("")
+
+    const handleSignUp = () => {
+        dispatch(signup(email, password))
+    }
+    
     return (
         <KeyboardAvoidingView behavior="height" style={styles.screen}>
+        
         <View style={ styles.container }>
-                <Text style={styles.title}>Registros</Text>
-                <Text> Formulario </Text>
-            <View style={styles.prompt}>
-                <Text style={styles.promptMessage}> Ya tenes una cuenta!? </Text>
-                     <TouchableOpacity onPress={() => console.log("ingresarres")}>
+                <Text style={styles.title}>Hola!</Text>
+                <Text> Email </Text>
+                <TextInput 
+                    keyboardType="email-addres" 
+                    autoCapitalize="none" 
+                    value={email}  
+                    onChangeText={setEmail}
+                    />
+                <Text> Contraseña </Text>
+                <TextInput 
+                    secureTextEntry 
+                    autoCapitalize="none" 
+                    value={password} 
+                    onChangeText={setPassword}  
+                    />
+                    <Button
+                    title="Registrate"
+                    onPress={(handleSignUp)}
+                    />
+
+            <View style={styles.prompt}>     
+                <TouchableOpacity 
+                    onPress={() => console.log("ingresarres")}
+                    style={styles.button}
+                >
                 <Text style={styles.promptButton}>Ingresar</Text>
                 </TouchableOpacity> 
             </View>

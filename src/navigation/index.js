@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 
 import BottomTabNavigator from "./BottomTabNavigator"
 import AuthNavigator from "./AuthNavigator";
+import { useSelector } from "react-redux"
 
 
 export default  () => { 
-    const [user, setUSer] = useState(null)
+    const userId = useSelector(state => state.auth.userId)
 
-    return <>{user ? <BottomTabNavigator /> : <AuthNavigator />}</>
+    return <>{userId ? <BottomTabNavigator /> : <AuthNavigator />}</>
 }
