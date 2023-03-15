@@ -12,12 +12,12 @@ const  AuthReducer  = ( state  = INITIAL_STATE, action) => {
                 ...state,
                 token: action.token,
                 userId: action.userId,
-            }
+            };
 
         default:
-            return state
+            return state;
     }
 
 }
 
-export default  AuthReducer
+export default  AuthReducer;

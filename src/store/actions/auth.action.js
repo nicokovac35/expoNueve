@@ -17,7 +17,7 @@ export const signup = (email, password) => {
                 returnSecureToken: true,
             }),
 
-        })
+        });
 
         const data = await response.json()
         console.log(data)
