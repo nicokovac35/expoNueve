@@ -25,7 +25,7 @@ const DetailsScreen = ({ navigation, route  }) => {
             <Text>{shoes.name}</Text>
             <Text>{shoes.description}</Text>
             <Text>{shoes.price}</Text>
-            <Button title="Add to cArt!" 
+            <Button title="Agregar al Carrito!" 
                     onPress={handleAddItem} 
             />  
         </View>

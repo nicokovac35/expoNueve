@@ -4,6 +4,7 @@ import React from "react";
 import BottomTabNavigator from "./BottomTabNavigator"
 import AuthNavigator from "./AuthNavigator";
 import ShopNavigator from "./ShopNavigator";
+import OrdersNavigator from "./OrdersNavigator";
 import { useSelector } from "react-redux"
 
 

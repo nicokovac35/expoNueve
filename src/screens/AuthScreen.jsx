@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useReducer, useState } from "react";
-import CategoriesScreen from "./CatergoriesScreen";
+
+
 import { 
 StyleSheet,  
 Text,  
@@ -14,6 +15,7 @@ Alert,
 import { useDispatch } from "react-redux";
 import { signup } from "../store/actions/auth.action";
 import Input from "../components/Input";
+import { ShopNavigator } from "../navigation/ShopNavigator"
 
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE"
 
@@ -42,7 +44,7 @@ const formReducer = (state, action ) => {
 }
 
 
-const AuthScreen = () => {
+const AuthScreen = ({navigation}) => {
 
     const dispatch = useDispatch()
     const [email, setEmail] = useState ("")
@@ -68,7 +70,7 @@ const AuthScreen = () => {
     })
 
     const handleSignUp = () => {
-        //dispatch(signup(email, password))
+        dispatch(signup(email, password))
         if (formState.formIsValid) {
             dispatch(signup(formState.inputValues.email, formState.inputValues.password))
         }else{
@@ -76,7 +78,13 @@ const AuthScreen = () => {
                 {text: "OK"}
             ])
         }
+
+        // const handleSkipUser = () => {
+    //     dispatch(skipuser (skip))
+    // }    
     }
+
+
 
     const onInputChangeHandler = useCallback((inputIdentifier, inputValue, inputValidity) =>{
         console.log(inputIdentifier, inputValue, inputValidity)
@@ -120,17 +128,14 @@ const AuthScreen = () => {
                     initialValue=""
                 />
                 <Button title= "Registrarme pls" onPress={handleSignUp}/>
-      
+
+
+                
+        
+              
                 
 
-            {<View style={styles.prompt}>     
-                <TouchableOpacity 
-                    onPress={() => console.log("ingresarres")}
-                    style={styles.button}
-                >
-                <Text style={styles.promptButton}>Ingresar</Text>
-                </TouchableOpacity> 
-            </View> }
+             
         </View>
         </KeyboardAvoidingView>
     )

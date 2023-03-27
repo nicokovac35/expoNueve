@@ -5,6 +5,8 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import CartNavigator from "./CartNavigator";
 import ShopNavigator from "./ShopNavigator";
 import OrdersNavigator from "./OrdersNavigator";
+import AuthNavigator from "./AuthNavigator";
+import MapNavigator from "./MapNavigator";
 
 const BottomTabs = createBottomTabNavigator ();
 
@@ -49,17 +51,30 @@ export default BottomTabNavigator = () => {
 
             <BottomTabs.Screen
                  name="OrdersTab" 
-                 component={OrdersNavigator}
+                 component={MapNavigator}
                  options={{
                     tabBarIcon: () => (
                         <View style={styles.icon}>
-                            <Ionicons name="list" size={20} color="black" />
-                            <Text> Pedidos </Text>
+                            <Ionicons name="map" size={20} color="black" />
+                            <Text> Tiendas </Text>
                         </View>
                     ),
                  }}
             />
-        </BottomTabs.Navigator>
+
+            <BottomTabs.Screen
+                 name="AuthTab" 
+                 component={AuthNavigator}
+                 options={{
+                    tabBarIcon: () => (
+                        <View style={styles.icon}>
+                            <Ionicons name="person-circle" size={20} color="black" />
+                            <Text> Login </Text>
+                        </View>
+                    ),
+                 }}
+            />
+            </BottomTabs.Navigator>
     )
 }
 
@@ -71,11 +86,12 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 5,
         position: "absolute",
-        bottom: 10,
-        left:20,
+        bottom: 0,
+        left:0,
         right:20,
         borderRadius:15,
         height:60,
+        width:"100%",
 
     },
 
@@ -83,6 +99,7 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: "center",
         alignItems: "center",
+        
     }
 })
 

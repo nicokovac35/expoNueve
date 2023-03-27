@@ -1,8 +1,10 @@
 import React from "react";
-import {Button, StyleSheet, Text, View, FlatList } from "react-native";
+import {Button, StyleSheet, Text, View, FlatList,ScrollView } from "react-native";
 import CategoriesItem  from "../components/CategoriesItem";
 import { useSelector, useDispatch } from "react-redux";
 import { selectedCategory } from "../store/actions/category.action";
+
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 
 
@@ -30,11 +32,19 @@ const CategoriesScreen = ({ navigation }) => {
     
     return(
         <View style={styles.container}>
+            <View>
+                
+            <Ionicons name="star" size={60} color="black" />
+            </View>     
+            
             <FlatList 
+            
                 data={categories}
                 renderItem={renderCategoriesItem}
                 keyExtractor={item => item.id}
-            />            
+            />     
+
+          
         </View>
     )
 }
@@ -48,7 +58,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },  
     categoriesContainer: {
-     padding:20,
+        flex:1,
+     padding:10,
      height:140,
     },
 })

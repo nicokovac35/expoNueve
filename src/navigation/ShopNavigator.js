@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CategoriesScreen from "../screens/CatergoriesScreen";
 import ProductsScreen from "../screens/ProductsScreen";
 import DetailsScreen from "../screens/DetailsScreen";
+import OrdersScreen from "../screens/OrdersScreen";
 
 import { COLORS } from "../constants/colors"
 
@@ -33,7 +34,7 @@ export default ShopNavigator = () => {
                  component={CategoriesScreen}
                  options={{
                     
-                    title:"Categorias",
+                    title:"INICIO",
                   
                  }}
                  
@@ -55,6 +56,14 @@ export default ShopNavigator = () => {
                 options={({ route }) => ({
                     title: route.params.name,
                 })}
+                 />
+
+                 <Stack.Screen 
+                 name="Orders"
+                 component={OrdersScreen}
+                 options={({ route }) =>({
+                    title:route.params.id
+                 })}
                  />
             </Stack.Navigator>
         

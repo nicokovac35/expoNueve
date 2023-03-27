@@ -16,7 +16,7 @@ const CartScreen = () => {
     const handleConfirmCart =() => {
         dispatch(confirmCart(items, total))
     }
-
+   
     const handleDeleteItem = id  =>{
         dispatch (removeItem(id))
     } 
