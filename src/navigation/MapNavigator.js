@@ -7,11 +7,8 @@ export default function App() {
 
     const [mapRegion, setMapRegion] = useState ({
         //-33.43700644245535, -70.63431606556514
-        latitude: -33.43700644245535,
-        longitude:-70.63431606556514 ,
-        latitudeDelta: 0.5221,
-        longitudeDelta: 0.3525,
-
+        //-33.50994190763904, -70.7565329424722
+        
     });
 
     const userLocation = async () => {
@@ -24,10 +21,39 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map}
-            region={mapRegion}
+      <MapView
+         style={styles.map}
+         initialRegion={{
+            latitude: -33.43700644245535,
+            longitude:-70.63431606556514 ,
+            latitudeDelta: 0.5221,
+            longitudeDelta: 0.3525,
+
+         }}
+         showsUserLocation
+         loadingEnabled
+         mapType="terrain"
+
+      >
+         <Marker 
+             coordinate={
+            {
+                latitude: -33.43700644245535,
+                longitude:-70.63431606556514 ,
+            }
+         }
+         
       />
-      <Marker coordinate={mapRegion} title='Marker'/>
+      <Marker 
+             coordinate={
+            {
+                latitude: -33.50994190763904,
+                longitude:-70.7565329424722,
+            }
+         }
+         
+      />
+    </MapView>
     </View>
   );
 }
