@@ -1,6 +1,6 @@
  import { Image, StyleSheet, Text, TouchableOpacity, View,}  from "react-native"
  import React from "react";
-import { PRODUCTS } from "../data/products"
+
 import Ionicons from "@expo/vector-icons/Ionicons";
 
  const ProductsItem = ({ item, onSelected}) => {
@@ -13,10 +13,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
             
             <View style={styles.imageContainer}>      
             <Ionicons name="star-half" size={50} color="black" />
+             
             <Image 
-            source={item.img}
-            />
-                  
+                    style={styles.image}
+                    source={{
+                       uri: item.img,
+                    }}
+                    />
                 </View>
 
                 <View style={styles.textContainer}>

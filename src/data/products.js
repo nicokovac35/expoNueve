@@ -9,7 +9,7 @@ export const PRODUCTS = [
         description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
         weight:"dato",
         price:65000,
-        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
+        img:"https://converse.com.mx/media/catalog/product/c/o/converse-run-star-motion-cx-lona-dama-bota-negro-a03924c-2.jpg",
         
         
     },
@@ -29,7 +29,7 @@ export const PRODUCTS = [
         description:"El Chuck 70 AT-CX Counter Climate brinda protección contra la intemperie y comodidad para mantenerte conectado con tu lado explorador y creativo.",
         weight:"dato",
         price:95000,
-        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
+        img:"https://converse.com.mx/media/catalog/product/c/o/converse-run-star-motion-cx-lona-dama-bota-negro-a03924c-2.jpg",
     },
     {
         id:"3",
