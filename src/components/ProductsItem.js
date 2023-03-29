@@ -1,7 +1,8 @@
  import { Image, StyleSheet, Text, TouchableOpacity, View,}  from "react-native"
  import React from "react";
+import { PRODUCTS } from "../data/products"
+import Ionicons from "@expo/vector-icons/Ionicons";
 
- 
  const ProductsItem = ({ item, onSelected}) => {
     return (
         <TouchableOpacity 
@@ -11,15 +12,15 @@
             
             
             <View style={styles.imageContainer}>      
-                    <Image
-                        style={styles.image}
-                        source={{
-                            uri:"https://converse.com.mx/media/catalog/product/c/o/converse-all-star-bb-prototype-cx-poliester-caballero-media-bota-blanco-a02507c-2.jpg",
-                        }}
-                    />
+            <Ionicons name="star-half" size={50} color="black" />
+            <Image 
+            source={item.img}
+            />
+                  
                 </View>
 
                 <View style={styles.textContainer}>
+                    
                     <Text>{item.name}</Text>
                     <Text>{item.description}</Text>
                     <Text>${item.price}</Text>
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0,height: 2},
         shadowRadius: 10,
         elevation: 5,
+        backgroundColor:"#3333"
     },
     imageContainer: {
         height: "50%",

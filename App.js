@@ -18,10 +18,7 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer >
         
-        {/* <Drawer.Navigator>
-          <Drawer.Screen name="Auth" component={AuthScreen} />
-          <Drawer.Screen name="categories" component={CategoriesScreen} />
-          </Drawer.Navigator> */}
+      
     
           <BottomTabNavigator />
           

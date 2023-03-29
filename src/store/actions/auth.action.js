@@ -1,11 +1,11 @@
-import { URL_AUTH_SIGNUP } from "../../constants/Database";
+import { URL_AUTH_SIGNUP} from "../../constants/Database";
 
 export const SIGNUP = "SIGNUP"
 
 export const signup = (email, password) => {
     return async dispatch => {
 
-    try {    
+
         const  response = await fetch(URL_AUTH_SIGNUP, {
             method: "POST",
             headers: {
@@ -27,9 +27,7 @@ export const signup = (email, password) => {
             token: data.idToken,
             userId: data.localId,
         })
-    } catch (error) {
-        console.log(error)
-    }
+    
 }
 
 }

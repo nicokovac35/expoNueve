@@ -33,6 +33,7 @@ const Input = ({onInputChange, initialValue, initialValid, requiered, email, max
        touched:false, 
     })
 
+
     useEffect (() => {
         if (inputState.touched) {
             onInputChange (inputState.value, inputState.isValid)
@@ -41,13 +42,14 @@ const Input = ({onInputChange, initialValue, initialValid, requiered, email, max
             
     const textChangeHandler = text => {
         const emailRegex =
-        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/ 
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         let isValid = true
 
 
-        if (requiered && text.trim().length === 0 ) isValid = false
+        if (props.requiered && text.trim().length === 0 ) isValid = false
+
         if( email && !emailRegex.test(text.toLowerCase())) isValid = false 
-        if (max !== null && text.length > max ) isValid = false
+        if (max !== null && text > max) isValid = false
         if (minlength !==  null && text.length < minlength) isValid = false
    
         dispatch({

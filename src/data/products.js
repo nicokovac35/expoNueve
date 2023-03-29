@@ -9,6 +9,8 @@ export const PRODUCTS = [
         description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
         weight:"dato",
         price:65000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
+        
         
     },
     {
@@ -18,6 +20,7 @@ export const PRODUCTS = [
         description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
         weight:"dato",
         price:32000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"2",
@@ -26,6 +29,7 @@ export const PRODUCTS = [
         description:"El Chuck 70 AT-CX Counter Climate brinda protección contra la intemperie y comodidad para mantenerte conectado con tu lado explorador y creativo.",
         weight:"dato",
         price:95000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"3",
@@ -34,6 +38,7 @@ export const PRODUCTS = [
         description:"El Converse Renew Chuck 70 Redux Scrap presenta un método innovador de fabricación que reutiliza los desechos del proceso de fabricación para que luzcas bien, mientras cuidas el planeta.",
         weight:"dato",
         price:85000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"4",
@@ -42,6 +47,7 @@ export const PRODUCTS = [
         description:"Los Chuck Taylor All Star Move: ultra ligeros con una plataforma estilo vanguardista ahora cuero sintético. Diseñado para tener una máxima libertad de movimiento.",
         weight:"dato",
         price:100000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"5",
@@ -50,6 +56,7 @@ export const PRODUCTS = [
         description:"Líneas audaces, comodidad CX de siguiente nivel. El ultra expresivo Run Star Motion regresa en un nuevo diseño monocolor.",
         weight:"dato",
         price:105000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"6",
@@ -58,6 +65,7 @@ export const PRODUCTS = [
         description:"Con base en negro, este Run Star Legacy CX se actualiza con colores llamativos y toques dorados para elevar su aspecto clásico.",
         weight:"dato",
         price:90000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
     },
     {
         id:"7",
@@ -66,6 +74,7 @@ export const PRODUCTS = [
         description:"Destacan los colores y realzan este calzado de alta velocidad.",
         weight:"dato",
         price:140000,
+        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
         
     },
     {
@@ -75,6 +84,7 @@ export const PRODUCTS = [
         description:"Los toques de color y los materiales listos para el rendimiento hacen que el All Star BB Shift sea una adición dinámica y que desafía el estilo para la cancha. ",
         weight:"dato",
         price:135000,
+        
     },
     {
         id:"9",

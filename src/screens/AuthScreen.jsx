@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useReducer, useState } from "react";
-
+import React, {useState, useEffect, useReducer, useCallback} from "react";
 
 import { 
 StyleSheet,  
@@ -12,123 +11,130 @@ Button,
 Alert,
 } from "react-native";
 
+
 import { useDispatch } from "react-redux";
-import { signup } from "../store/actions/auth.action";
 import Input from "../components/Input";
-import { ShopNavigator } from "../navigation/ShopNavigator"
+import { signup } from "../store/actions/auth.action";
 
-const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE"
 
-const formReducer = (state, action ) => {
+
+const  FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE"
+
+
+const formReducer = (state, action) => {
     console.log (action)
-        if(action.type === FORM_INPUT_UPDATE){
-            const updatedValues = {
-                ...state.inputValues,
-                [action.input] : action.value
-            } 
-            const updatedValidities = {
-                ...state.inputValidities,
-                [action.input]: action.isValid, 
-            }
-            let updateFormIsValid = true 
-                for (const key in updatedValidities){
-                    updateFormIsValid = updateFormIsValid && updatedValidities [key]
+    if (action.type === FORM_INPUT_UPDATE) {
+        const  updateValues = { 
+            ...state.inputValues, 
+            [action.input] : action.value 
         }
+        const updateValidities = {
+            ...state.inputValidities, 
+            [action.input]: action.isValid,
+        }
+        let updateFormIsValid = true 
+            for (const key in updateValidities) {
+                updateFormIsValid = updateFormIsValid && updateValidities[key]
+            }    
         return{
-            inputValues : updatedValues,
-            inputValidities : updatedValidities,
-            formIsValid : updateFormIsValid, 
+            inputValues: updateValues,
+            inputValidities : updateValidities,
+            formIsValid :  updateFormIsValid,
         }
     }
-        return state
+    return state
 }
 
 
 const AuthScreen = ({navigation}) => {
 
     const dispatch = useDispatch()
-    const [email, setEmail] = useState ("")
-    const [ password, setPassword] = useState ("")
-    const [error, setError] = useState(null)
-
+    const [email, setEmail] = useState ('')
+    const [ password, setPassword] = useState ('')
+    const [ error, setError] = useState (null)
+    
     useEffect(() => {
-        if (error){
-            Alert.alert("Ha ocurrrido un error", error, [{text:"OK"}])
+        if (error) {
+            Alert.alert(":( no he podido iniciar sesion",error, [{text:"OK"}])
         }
     }, [error])
 
-    const [ formState, dispatchFormState ] = useReducer (formReducer,{
-        inputValues: {
+    const [formState, dispatchFormState] = useReducer (formReducer,{
+        inputValues:{
             email:"",
-            password:"",
+            password: "",
         },
-        inputValidities:{
+        inputValidities: {
             email:false,
-            password:false,
+            password: false,
         },
-        formIsValid:false,
+        formIsValid: false,
     })
 
+
+
     const handleSignUp = () => {
-        dispatch(signup(email, password))
-        if (formState.formIsValid) {
-            dispatch(signup(formState.inputValues.email, formState.inputValues.password))
-        }else{
-            Alert.alert("Formulario invalido", "ingresa email y contraseña valida",[
-                {text: "OK"}
-            ])
-        }
-
-        // const handleSkipUser = () => {
-    //     dispatch(skipuser (skip))
-    // }    
-    }
-
-
-
-    const onInputChangeHandler = useCallback((inputIdentifier, inputValue, inputValidity) =>{
-        console.log(inputIdentifier, inputValue, inputValidity)
-        dispatchFormState({
-            type: FORM_INPUT_UPDATE,
-            value: inputValue,
-            isValid: inputValidity,
-            input : inputIdentifier, 
-        })
-    }, [dispatchFormState]
-    )
+       // dispatch(signup(email, password))
+       if  (formState.formIsValid) {
+        dispatch(
+            signup(formState.inputValues.email, formState.inputValues.password)
+        )
+        }else {
+                Alert.alert("Formulario es INVALIDO! :( , ingrese email  y password valido",[
+                    {text: "OK"},
+                ])
+            }
+       }
+       
+       const onInputChangeHandler = useCallback (
+        (inputIdentifier, inputValue, inputValidity) => {
+            console.log(inputIdentifier, inputValue, inputValidity)
+            dispatchFormState({
+                type:FORM_INPUT_UPDATE,
+                value: inputValue,
+                isValid: inputValidity,
+                input : inputIdentifier,
+            })
+        }, [dispatchFormState]
+       )
     
+
+
+
+
+
     return (
         <KeyboardAvoidingView behavior="height" style={styles.screen}>
         
         <View style={ styles.container }>
-                <Text style={styles.title}>Hola!</Text>
+                <Text style={styles.title}>Registrate!</Text>
+                    <Input
+                        id='email'
+                        label="Correo"
+                        keyboardType="email-address"
+                        requiered
+                        email
+                        autoCapitalize ="none"
+                        errorText="Un Correo Valido :)"
+                        onInputChange={ onInputChangeHandler}
+                        initialValue=""
+                    />
+                       <Input
+                        id='password'
+                        label="password"
+                        keyboardType="default"
+                        requiered
+                        password
+                        secureTextEntry
+                        autoCapitalize ="none"
+                        errorText="Una Contraseña  Valida :/ "
+                        onInputChange={ onInputChangeHandler}   
+                        initialValue=""
+                    />
+                             
+                     
                 
-                <Input
-                    id="email"
-                    label="Email"
-                    KeyboardType="email-address"
-                    requiered
-                    email
-                    autoCapitalize="none"
-                    errorText="Porfa ingresa un correo valido"
-                    onInputChange={onInputChangeHandler}
-                    initialValue=""
-                />
-
-                <Input
-                    id="password"
-                    label="password"
-                    KeyboardType="default"
-                    requiered
-                    password
-                    secureTextEntry 
-                    autoCapitalize="none"
-                    errorText="Porfa ingresa un correo valido"
-                    onInputChange={onInputChangeHandler}
-                    initialValue=""
-                />
-                <Button title= "Registrarme pls" onPress={handleSignUp}/>
-
+                <Button title= "Registrar Cuenta " onPress={handleSignUp}/>
 
                 
         
@@ -176,7 +182,7 @@ const styles = StyleSheet.create({
         fontSize:16,
     },
     button: {
-        backgroundColor:  "#ccc",
+        backgroundColor:  "black",
         marginVertical: 20,
     },
 })

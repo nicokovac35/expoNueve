@@ -8,6 +8,7 @@ import OrdersNavigator from "./OrdersNavigator";
 import AuthNavigator from "./AuthNavigator";
 import MapNavigator from "./MapNavigator";
 
+
 const BottomTabs = createBottomTabNavigator ();
 
 

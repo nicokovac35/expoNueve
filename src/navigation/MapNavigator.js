@@ -36,6 +36,9 @@ export default function App() {
 
       >
          <Marker 
+             title='Local Plaza Baquedano'
+             description='Direccion: Pio Nono 656,Santiago'
+             pinColor='black' 
              coordinate={
             {
                 latitude: -33.43700644245535,
@@ -45,14 +48,41 @@ export default function App() {
          
       />
       <Marker 
+            title='Local Plaza Maipu '
+            description='Direccion: Pio Nono 656,Santiago'  
              coordinate={
             {
                 latitude: -33.50994190763904,
-                longitude:-70.7565329424722,
-            }
-         }
-         
+                longitude:-70.7565329424722,}} 
       />
+      <Marker 
+            title='Local Estacion Central '
+            description='Direccion: Pio Nono 656,Santiago'  
+             coordinate={
+            {
+//-33.45071400372341, -70.67900196663084
+
+                latitude: -33.45071400372341,
+                longitude:-70.67900196663084,}} 
+      />
+
+    <Marker 
+            title='Local Outlet '
+            description='Direccion: Pio Nono 656,Santiago'  
+             coordinate={
+            {
+//-33.48594574530148, -70.62775057478703              
+                latitude: -33.48594574530148,
+                longitude:-70.62775057478703 ,}} 
+      />
+
+  
+
+
+      
+
+
+                
     </MapView>
     </View>
   );
@@ -62,8 +92,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  Marker: {
+
+  },
   map: {
     width: '100%',
     height: '100%',
   },
+
+
+
+
 });
