@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native"
+import { Button, StyleSheet, Text, View, Image } from "react-native"
 import React, { useEffect} from "react"
 import { useSelector, useDispatch } from "react-redux"
 
@@ -22,6 +22,14 @@ const DetailsScreen = ({ navigation, route  }) => {
 
     return (
         <View style={styles.container}>
+              <Image 
+                    style={styles.image}
+                    source={{
+                       uri: shoes.img,
+                    }}
+
+                />
+
             <Text>{shoes.name}</Text>
             <Text>{shoes.description}</Text>
             <Text>{shoes.price}</Text>

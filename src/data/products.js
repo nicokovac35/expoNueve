@@ -20,7 +20,7 @@ export const PRODUCTS = [
         description:"El mejor de todos, con una lona más resistente y una capa extra de comodidad. ",
         weight:"dato",
         price:32000,
-        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
+        img:"https://www.converse.com/es/shop/p/chuck-taylor-all-star-unisex/M9006MP.html?lang=es_ES&dwvar_M9006MP_color=black&styleNo=M9160C&cgid=Catalog_All_HighTops",
     },
     {
         id:"2",
@@ -74,7 +74,7 @@ export const PRODUCTS = [
         description:"Destacan los colores y realzan este calzado de alta velocidad.",
         weight:"dato",
         price:140000,
-        img:"https://img.freepik.com/premium-vector/converse-shoe-low-vector-image-illustration_776624-9.jpg?w=2000",
+        img:"https://i.etsystatic.com/29647992/r/il/8c7226/3711415275/il_fullxfull.3711415275_ogsr.jpg",
         
     },
     {
@@ -100,6 +100,7 @@ export const PRODUCTS = [
         description:"El Chuck Taylor All Star Street tiene ventaja de rendimiento al aire libre para ganarle a esta temporada.",
         weight:"dato",
         price:95000,
+        img:"./img/img007.jpg"
     },
 
 ]

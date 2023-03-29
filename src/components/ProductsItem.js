@@ -12,7 +12,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
             
             
             <View style={styles.imageContainer}>      
-            <Ionicons name="star-half" size={50} color="black" />
+           
              
             <Image 
                     style={styles.image}
